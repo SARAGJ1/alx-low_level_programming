@@ -7,15 +7,20 @@
  * hash_table_create - hash table creation
  * @size: size of the table
  *
- * return - pointer to table if sucessed
+ * @table : pointer to table if sucessed
  * or NULL if failed
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *table;
 
-	table = malloc((sizeof(unsigned long int) * size) + 16);
+	table = malloc((sizeof(hash_table_t));
 	if (table == NULL)
+	{
+		return (NULL);
+	}
+	table->buckets = malloc(size * sizeof(hash_node_t *));
+	if (table->buckets == NULL)
 	{
 		return (NULL);
 	}
