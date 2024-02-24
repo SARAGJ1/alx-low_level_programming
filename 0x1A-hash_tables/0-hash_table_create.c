@@ -1,14 +1,11 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
 
 /**
- * hash_table_create - hash table creation
- * @size: size of the table
+ * hash_table_create - Creates a hash table.
+ * @size: The size of the array.
  *
- * @table : pointer to table if sucessed
- * or NULL if failed
+ * Return: If an error occurs - NULL.
+ * Otherwise - a pointer to the new hash table.
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
@@ -19,10 +16,15 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		return (NULL);
 	}
+	table->size = size;
 	table->array = malloc(size * sizeof(hash_node_t *));
 	if (table->array == NULL)
 	{
 		return (NULL);
+	}
+	for (i = 0; i < size; i++)
+	{
+		table->array[i] = NULL;
 	}
 	return (table);
 }
