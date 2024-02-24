@@ -7,7 +7,7 @@
  * hash_table_create - hash table creation
  * @size: size of the table
  *
- * return pointer to table if sucessed 
+ * return - pointer to table if sucessed
  * or NULL if failed
  */
 hash_table_t *hash_table_create(unsigned long int size)
