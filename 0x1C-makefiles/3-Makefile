@@ -1,11 +1,11 @@
-all: $'(OBJ)
-  $(CC) $(ONJ) -o $(NAME)
+all: $(OBJ)
+	$(CC) $(ONJ) -o $(NAME)
 
 clean:
-  $(RM) *~ $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
-  $(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
