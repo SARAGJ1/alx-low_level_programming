@@ -4,7 +4,9 @@
 
 /**
  * linear_search - searches for a value in an array
- * @i : internal variable
+ * @array : the array where we want to look
+ * @size : the size of the array
+ * @value : the value we want to find
  *
  * Return: index i if SUCCESS
  */
