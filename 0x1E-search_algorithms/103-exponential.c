@@ -80,12 +80,16 @@ kk:
 				break;
 		}
 		if (array[i] < value)
+		{
 			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 			j = i;
 			i = i * 2;
+		}
 		if (i >= size)
+		{
 			i = size - 1;
 			goto kk;
+		}
 	}
 	return (-1);
 }
