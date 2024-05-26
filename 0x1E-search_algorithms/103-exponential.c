@@ -70,7 +70,6 @@ kk:
 				l++;
 			}
 			m = binary_search(array1, size1, value);
-			free(array1);
 			if (m != -1)
 				return (m + j);
 			else
