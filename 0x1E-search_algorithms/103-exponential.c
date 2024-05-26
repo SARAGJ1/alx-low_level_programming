@@ -52,32 +52,30 @@ int exponential_search(int *array, size_t size, int value)
 	size_t i = 1, j = 0, size1, k, l = 0;
 	int *array1, m;
 
-	if (array == NULL)
-		return (-1);
-	if (array[0] > value)
+	if ((array == NULL) || (array[0] > value))
 		return (-1);
 	while (i < size)
 	{
 		if (array[i] >= value)
 		{
 kk:
-				printf("Value found between indexes [%ld] and [%ld]\n", j, i);
-				array1 = (int *)malloc((i - j + 1) * sizeof(int));
-				if (array1 == NULL)
-					return (-1);
-				size1 = (i - j) + 1;
-				for (k = j; k <= i; k++)
-				{
-					array1[l] = array[k];
-					l++;
-				}
-				m = binary_search(array1, size1, value);
-				free(array1);
-				if (m != -1)
-					return (m + j);
-				else
-					return (-1);
-				break;
+			printf("Value found between indexes [%ld] and [%ld]\n", j, i);
+			array1 = (int *)malloc((i - j + 1) * sizeof(int));
+			if (array1 == NULL)
+				return (-1);
+			size1 = (i - j) + 1;
+			for (k = j; k <= i; k++)
+			{
+				array1[l] = array[k];
+				l++;
+			}
+			m = binary_search(array1, size1, value);
+			free(array1);
+			if (m != -1)
+				return (m + j);
+			else
+				return (-1);
+			break;
 		}
 		if (array[i] < value)
 		{
